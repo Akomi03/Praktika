@@ -3,7 +3,8 @@ public class Main {
         Zufallszahl z = new Zufallszahl();
         Fakultaet f = new Fakultaet();
         Primzahl p = new Primzahl();
-        p.primzahlen();
+        Fleache fl = new Fleache();
+        fl.flaechenberechnung();
 
     }
 }

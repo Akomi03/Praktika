@@ -2,10 +2,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Zufallszahl {
-    Scanner sc = new Scanner(System.in);
-    int zufallszahl;
-    int versuche;
-    Random rn = new Random();
+    private Scanner sc = new Scanner(System.in);
+    private  int zufallszahl;
+    private  int versuche;
+    private  Random rn = new Random();
 
     public void raten() {
         System.out.println("In welchen Spektrum wollen sie raten?");

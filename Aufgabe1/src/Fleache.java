@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 public class Fleache {
-    double laenge;
-    double breite;
-    double hoehe;
-    double radius;
-    double ergebnis;
-    double pi = Math.PI;
-    Scanner sc = new Scanner(System.in);
+   private double laenge;
+    private double breite;
+    private double hoehe;
+    private  double radius;
+    private  double ergebnis;
+    private  double pi = Math.PI;
+    private  Scanner sc = new Scanner(System.in);
     public void flaechenberechnung() {
 
         System.out.print("Wäklen Sie zwischen 0 - Kreis 1 - Dreieck 2 - Viereck: ");
@@ -42,14 +42,14 @@ public class Fleache {
 
     }
 
-    public void kreis() {
+    private void kreis() {
         System.out.print("Geben Sie den Radius des Kreises in cm  ein: ");
         radius = sc.nextInt();
         ergebnis = (radius * radius) * pi;
         System.out.println("Die Kreisfläche ist: " + ergebnis + " cm² groß");
     }
 
-    public void dreieck() {
+    private void dreieck() {
 
         System.out.print("Geben Sie die Grundlänge des Dreiecks in cm ein: ");
         laenge = sc.nextInt();
@@ -59,7 +59,7 @@ public class Fleache {
         System.out.println("Die Dreiecksfläche ist: " + ergebnis + " cm² groß");
     }
 
-    public void viereck() {
+    private void viereck() {
         System.out.print("Geben Sie die Länge des Vierecks in cm ein: ");
         laenge = sc.nextInt();
         System.out.print("Geben Sie die Breite des Vierecks in cm ein: ");

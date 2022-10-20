@@ -27,7 +27,7 @@ public class Primzahl {
         if (prim == false) {
             System.out.println(priminput + " ist eine Primzahl.");
         } else {
-            System.out.println(priminput + " ist eine keine Primzahl.");
+            System.out.println(priminput + " ist keine Primzahl.");
         }
     }
 }
