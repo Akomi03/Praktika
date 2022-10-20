@@ -30,4 +30,9 @@ public class Primzahl {
             System.out.println(priminput + " ist keine Primzahl.");
         }
     }
+
+    public static void main(String[] args) {
+        Primzahl p = new Primzahl();
+        p.primzahlen();
+    }
 }

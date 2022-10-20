@@ -11,5 +11,10 @@ public class Fakultaet {
         }
         System.out.println("Die Fakultät von " + input + " lautet " + ergebnis);
     }
+
+    public static void main(String[] args) {
+        Fakultaet f = new Fakultaet();
+        f.rechnen();
+    }
 }
 

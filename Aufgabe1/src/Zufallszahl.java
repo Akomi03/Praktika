@@ -26,4 +26,8 @@ public class Zufallszahl {
         }
     }
 
+    public static void main(String[] args) {
+        Zufallszahl z = new Zufallszahl();
+        z.raten();
+    }
 }

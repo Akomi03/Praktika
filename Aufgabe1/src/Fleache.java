@@ -8,6 +8,7 @@ public class Fleache {
     private  double ergebnis;
     private  double pi = Math.PI;
     private  Scanner sc = new Scanner(System.in);
+
     public void flaechenberechnung() {
 
         System.out.print("Wäklen Sie zwischen 0 - Kreis 1 - Dreieck 2 - Viereck: ");
@@ -66,5 +67,10 @@ public class Fleache {
         breite = sc.nextInt();
         ergebnis = laenge * breite;
         System.out.println("Die Vierecksfläche ist: " + ergebnis + " cm² groß");
+    }
+
+    public static void main(String[] args) {
+        Fleache f = new Fleache();
+        f.flaechenberechnung();
     }
 }
