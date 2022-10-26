@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Palindrom {
@@ -6,7 +5,8 @@ public class Palindrom {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Palindrom p = new Palindrom(sc.nextLine());
+        System.out.println("Bitte einen String an Wörten eingeben die überprüft werden sollen");
+        new Palindrom(sc.nextLine());
 
 
     }
@@ -20,17 +20,17 @@ public class Palindrom {
     }
 
     public void testen() {
-        for (int i = 0; i < woerter.length; i++) {
-            char[] charword = woerter[i].toLowerCase().toCharArray();
+        for (String pS : woerter) {
+            char[] charword = pS.toLowerCase().toCharArray();
             char[] palindrom = new char[charword.length];
-            for (int j = 0; j<charword.length;j++){
-                palindrom[palindrom.length-1-j]=charword[j];
+            for (int j = 0; j < charword.length; j++) {
+                palindrom[palindrom.length - 1 - j] = charword[j];
             }
             String output = new String(palindrom);
-            if (woerter[i].toLowerCase().equals(output)){
-                System.out.println(woerter[i]+" ist ein Palindrom");
-            }else{
-                System.out.println(woerter[i]+" ist kein Palindrom");
+            if (pS.toLowerCase().equals(output)) {
+                System.out.println(pS + " ist ein Palindrom");
+            } else {
+                System.out.println(pS + " ist kein Palindrom");
             }
 
         }
