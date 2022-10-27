@@ -7,5 +7,6 @@ public class Main {
             test.add(i);
         }
         System.out.println(test);
+
     }
 }
