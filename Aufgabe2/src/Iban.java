@@ -11,11 +11,11 @@ public class Iban {
         while (true) {
 
             try {
-                String sBLZ=(sc.nextLine());
-                if(sBLZ.length()==8){
+                String sBLZ = (sc.nextLine());
+                if (sBLZ.length() == 8) {
                     bLZ = new BigInteger(sBLZ);
                     break;
-                }else{
+                } else {
                     System.out.println("Keine Gueltige BLZ");
                 }
 
@@ -23,7 +23,7 @@ public class Iban {
                 System.out.println("Keine Gueltige BLZ");
             }
         }
-        System.out.println("Bitte Kontonummer eingeben: ");                 //Hier noch eine Prüfung ob nur Zahlen
+        System.out.println("Bitte Kontonummer eingeben: ");
         while (true) {
             try {
                 kontonummer = new BigInteger(sc.nextLine());
@@ -34,17 +34,15 @@ public class Iban {
         }
 
         BigInteger withoutHash = bLZ.multiply(BigInteger.valueOf(10).pow(10)).add(kontonummer);
-        BigInteger berechnungFinal= withoutHash.multiply(BigInteger.valueOf(10).pow(6)).add( BigInteger.valueOf(131400));
+        BigInteger berechnungFinal = withoutHash.multiply(BigInteger.valueOf(10).pow(6)).add(BigInteger.valueOf(131400));
 
-          var ergebnis = BigInteger.valueOf(98).subtract(berechnungFinal.mod(BigInteger.valueOf(97)));
+        var ergebnis = BigInteger.valueOf(98).subtract(berechnungFinal.mod(BigInteger.valueOf(97)));
         BigInteger iBAN = ergebnis.multiply(BigInteger.valueOf(10).pow(18)).add(withoutHash);
-        if(ergebnis.toString().length()==1){
-              System.out.println("Ihre IBAN lautet: DE0"+ iBAN);
-          }else {
-              System.out.println("Ihre IBAN lautet: DE" + iBAN);
-          }
-
-
+        if (ergebnis.toString().length() == 1) {
+            System.out.println("Ihre IBAN lautet: DE0" + iBAN);
+        } else {
+            System.out.println("Ihre IBAN lautet: DE" + iBAN);
+        }
 
 
     }
