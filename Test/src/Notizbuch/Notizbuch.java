@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Notizbuch {
     private final String name;
-    ArrayList<Notiz> buch = new ArrayList<Notiz>();
+    ArrayList<Notiz> buch = new ArrayList<>();
 
     public Notizbuch(String pName) {
         name = pName;
@@ -60,10 +60,27 @@ public class Notizbuch {
         buch.remove(i-1);
 
     }
+    public void edit(String pTitel,String pNew){
+        String titel="";
+        int i=0;
+        while (!titel.equals(pTitel)){
+            if(i>= buch.size()){
+                System.out.println("Keine Notiz vorhanden");
+                return;
+            }
+            titel=buch.get(i).getTitel();
+            i++;
+        }
+        buch.get(i-1).setNotiz(pNew);
+        System.out.println(buch.get(i-1).getTitel()+" | "+buch.get(i-1).getNotiz());
+
+    }
+
 
 
 
     public String getName() {
         return name;
     }
+
 }
