@@ -2,10 +2,10 @@ package Kontaktdaten;
 
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Kontaktbuch kontaktbuch = new Kontaktbuch();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Wilkommen im Kontaktbuch!");
+        System.out.println("Willkommen im Kontaktbuch!");
         while (true) {
             System.out.println("Was möchten Sie tun?");
             System.out.println("1: Kontakt hinzufügen");
@@ -14,10 +14,11 @@ public class Main {
             System.out.println("4: Kontakt bearbeiten");
             System.out.println("5: Alle Kontakte anzeigen");
             System.out.println("6: Programm beenden");
+
             try {
-                int auswahl = sc.nextInt();
+                String auswahl = sc.next();
                 switch(auswahl){
-                    case 1 -> {
+                    case "1" -> {
                         sc.nextLine();
                         System.out.println("Vorname: ");
                         String vorname = sc.nextLine();
@@ -34,7 +35,7 @@ public class Main {
                         kontaktbuch.addKontakt(vorname, nachname, adresse, geburtsdatum, telefonnummer, email);
                         System.out.println("Kontakt hinzugefügt!");
                     }
-                    case 2 -> {
+                    case "2" -> {
                         System.out.println("Welchen Kontakt wollen Sie löschen?");
                         kontaktbuch.printKontakte();
                         System.out.println("Geben Sie die ID des Kontakts ein, den Sie löschen wollen: ");
@@ -42,14 +43,14 @@ public class Main {
                         kontaktbuch.removeKontakt(iD);
                         System.out.println("Kontakt gelöscht!");
                     }
-                    case 3 -> {
+                    case "3" -> {
                         System.out.println("Welchen Kontakt wollen Sie anzeigen?");
                         kontaktbuch.printKontakte();
                         System.out.println("Geben Sie die ID des Kontakts ein, den Sie anzeigen wollen: ");
                         int iD = sc.nextInt();
                         kontaktbuch.viewKontakt(iD);
                     }
-                    case 4 -> {
+                    case "4" -> {
                         System.out.println("Welchen Kontakt wollen Sie bearbeiten?");
                         kontaktbuch.printKontakte();
                         System.out.println("Bitte geben Sie die ID des Kontakts ein, den Sie bearbeiten wollen: ");
@@ -57,8 +58,9 @@ public class Main {
                         kontaktbuch.changeKontakt(iD);
                         System.out.println("Kontakt bearbeitet!");
                     }
-                    case 5 -> kontaktbuch.printKontakte();
-                    case 6 -> System.exit(0);
+                    case "5" -> kontaktbuch.printKontakte();
+                    case "6" -> System.exit(0);
+                    default -> System.out.println("Bitte geben Sie eine Zahl zwischen 1 und 6 ein!");
                 }
             } catch (Exception e) {
                 System.out.println("Fehler: " + e.getMessage());
