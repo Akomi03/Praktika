@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/Aufgabe1/src/Main.java" charset="US-ASCII" />
-    <file url="file://$PROJECT_DIR$/Aufgabe2/src/Iban.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/Aufgabe2/src/Palindrom.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Fahrzeug/Main.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Aufgabe1/src/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe2/src/Iban.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe2/src/Palindrom.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Fahrzeug/Bike.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Fahrzeug/Car.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Fahrzeug/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Fahrzeug/Vehicle.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Hochschule/Dozent.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Hochschule/Lehrnender.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Hochschule/Person.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Hochschule/Schueler.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Kontaktdaten/Kontakt.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Kontaktdaten/Kontaktbuch.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Aufgabe3/src/Kontaktdaten/Main.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/Test/src/Vererbung/Main.java" charset="windows-1252" />
+    <file url="PROJECT" charset="windows-1252" />
   </component>
 </project>
