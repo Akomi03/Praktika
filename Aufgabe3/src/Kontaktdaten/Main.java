@@ -14,8 +14,8 @@ public class Main {
             System.out.println("4: Kontakt bearbeiten");
             System.out.println("5: Alle Kontakte anzeigen");
             System.out.println("6: Programm beenden");
-            int auswahl = sc.nextInt();
             try {
+                int auswahl = sc.nextInt();
                 switch(auswahl){
                     case 1 -> {
                         sc.nextLine();
@@ -37,12 +37,15 @@ public class Main {
                     case 2 -> {
                         System.out.println("Welchen Kontakt wollen Sie löschen?");
                         kontaktbuch.printKontakte();
+                        System.out.println("Geben Sie die ID des Kontakts ein, den Sie löschen wollen: ");
                         int iD = sc.nextInt();
                         kontaktbuch.removeKontakt(iD);
+                        System.out.println("Kontakt gelöscht!");
                     }
                     case 3 -> {
                         System.out.println("Welchen Kontakt wollen Sie anzeigen?");
                         kontaktbuch.printKontakte();
+                        System.out.println("Geben Sie die ID des Kontakts ein, den Sie anzeigen wollen: ");
                         int iD = sc.nextInt();
                         kontaktbuch.viewKontakt(iD);
                     }
@@ -52,12 +55,13 @@ public class Main {
                         System.out.println("Bitte geben Sie die ID des Kontakts ein, den Sie bearbeiten wollen: ");
                         int iD = sc.nextInt();
                         kontaktbuch.changeKontakt(iD);
+                        System.out.println("Kontakt bearbeitet!");
                     }
                     case 5 -> kontaktbuch.printKontakte();
                     case 6 -> System.exit(0);
                 }
             } catch (Exception e) {
-                System.out.println("Falsche Eingabe!");
+                System.out.println("Fehler: " + e.getMessage());
             }
 
 
