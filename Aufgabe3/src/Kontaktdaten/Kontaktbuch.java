@@ -8,9 +8,18 @@ public class Kontaktbuch {
     ArrayList<Kontakt> kontakte = new ArrayList<>();
 
     public void addKontakt(String vorname, String nachname, String adresse, String geburtsdatum, String telefonnummer, String email) {
-        int iD = kontakte.size();
+        int iD =0;
+        for(int i =0; i<kontakte.size(); i++){
+            if(kontakte.get(i).getiD() != i){
+                iD = i;
+                break;
+            }else{
+                iD = kontakte.size();
+            }
+        }
         Kontakt kontakt = new Kontakt(iD, vorname, nachname, adresse, geburtsdatum, telefonnummer, email);
         kontakte.add(kontakt);
+        sortbyID();
     }
 
 
@@ -22,6 +31,7 @@ public class Kontaktbuch {
         for (Kontakt kontakt : kontakte) {
             System.out.println(kontakt.iD+": "+kontakt.getVorname() + " " + kontakt.getNachname());
         }
+        sortbyID();
     }
 
     public void viewKontakt(int pID) {
@@ -77,6 +87,17 @@ public class Kontaktbuch {
                         String email = sc.next();
                         kontakt.setEmail(email);
                     }
+                }
+            }
+        }
+    }
+    private void sortbyID(){
+        for(int i = 0; i<kontakte.size(); i++){
+            for(int j = 0; j<kontakte.size(); j++){
+                if(kontakte.get(i).getiD() < kontakte.get(j).getiD()){
+                    Kontakt temp = kontakte.get(i);
+                    kontakte.set(i, kontakte.get(j));
+                    kontakte.set(j, temp);
                 }
             }
         }

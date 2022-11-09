@@ -19,6 +19,10 @@ public class Kontakt {
         this.email = email;
     }
 
+    public int getiD() {
+        return iD;
+    }
+
     public String getVorname() {
         return vorname;
     }
@@ -38,6 +42,7 @@ public class Kontakt {
     public String getAdresse() {
         return adresse;
     }
+
 
     public void setAdresse(String pAdresse) {
         adresse = pAdresse;
