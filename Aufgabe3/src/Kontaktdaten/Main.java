@@ -1,8 +1,9 @@
 package Kontaktdaten;
 
 import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         Kontaktbuch kontaktbuch = new Kontaktbuch();
         Scanner sc = new Scanner(System.in);
         System.out.println("Willkommen im Kontaktbuch!");
@@ -17,7 +18,7 @@ public class Main {
 
             try {
                 String auswahl = sc.next();
-                switch(auswahl){
+                switch (auswahl) {
                     case "1" -> {
                         sc.nextLine();
                         System.out.println("Vorname: ");
@@ -59,14 +60,19 @@ public class Main {
                         System.out.println("Kontakt bearbeitet!");
                     }
                     case "5" -> kontaktbuch.printKontakte();
-                    case "6" -> System.exit(0);
+                    case "6" -> {
+                        System.out.println("Programm beendet!");
+                        System.exit(0);
+                    }
                     default -> System.out.println("Bitte geben Sie eine Zahl zwischen 1 und 6 ein!");
                 }
             } catch (Exception e) {
                 System.out.println("Fehler: " + e.getMessage());
             }
-
-
+            Thread.sleep(3000);
+            System.out.println();
+            System.out.println("------------------------------------------------");
+            System.out.println();
         }
     }
 }
