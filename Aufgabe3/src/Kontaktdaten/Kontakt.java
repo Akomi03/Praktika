@@ -19,7 +19,7 @@ public class Kontakt {
         this.email = email;
     }
 
-    public int getiD() {
+    public int getID() {
         return iD;
     }
 
