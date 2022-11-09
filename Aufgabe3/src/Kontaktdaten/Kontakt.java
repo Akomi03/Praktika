@@ -43,7 +43,6 @@ public class Kontakt {
         return adresse;
     }
 
-
     public void setAdresse(String pAdresse) {
         adresse = pAdresse;
     }
