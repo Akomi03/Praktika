@@ -1,3 +1,3 @@
 # Praktika
-Aufgaben der Einzelnen Praktika in den Jeweiligen Modulen
-Test ist für Die Aufgaben aus dem Unterricht und andere anwendungen zum Testen von Funktionen
+Aufgaben der einzelnen Praktika in den jeweiligen Modulen
+Unterricht ist für die Aufgaben aus dem Unterricht und andere anwendungen zum Testen von Funktionen

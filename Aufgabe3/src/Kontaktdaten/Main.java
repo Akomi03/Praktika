@@ -3,7 +3,7 @@ package Kontaktdaten;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Kontaktbuch kontaktbuch = new Kontaktbuch();
         Scanner sc = new Scanner(System.in);
         System.out.println("Willkommen im Kontaktbuch!");
@@ -35,6 +35,7 @@ public class Main {
                         String email = sc.nextLine();
                         kontaktbuch.addKontakt(vorname, nachname, adresse, geburtsdatum, telefonnummer, email);
                         System.out.println("Kontakt hinzugefügt!");
+                        Thread.sleep(2000);
                     }
                     case "2" -> {
                         System.out.println("Welchen Kontakt wollen Sie löschen?");
@@ -43,6 +44,7 @@ public class Main {
                         int iD = sc.nextInt();
                         kontaktbuch.removeKontakt(iD);
                         System.out.println("Kontakt gelöscht!");
+                        Thread.sleep(2000);
                     }
                     case "3" -> {
                         System.out.println("Welchen Kontakt wollen Sie anzeigen?");
@@ -50,6 +52,7 @@ public class Main {
                         System.out.println("Geben Sie die ID des Kontakts ein, den Sie anzeigen wollen: ");
                         int iD = sc.nextInt();
                         kontaktbuch.viewKontakt(iD);
+                        Thread.sleep(2000);
                     }
                     case "4" -> {
                         System.out.println("Welchen Kontakt wollen Sie bearbeiten?");
@@ -58,18 +61,27 @@ public class Main {
                         int iD = sc.nextInt();
                         kontaktbuch.changeKontakt(iD);
                         System.out.println("Kontakt bearbeitet!");
+                        Thread.sleep(2000);
                     }
-                    case "5" -> kontaktbuch.printKontakte();
+                    case "5" -> {
+                        kontaktbuch.printKontakte();
+                        System.out.println("Drücken Sie Enter, um fortzufahren...");
+                        System.in.read();
+                    }
                     case "6" -> {
                         System.out.println("Programm beendet!");
                         System.exit(0);
                     }
-                    default -> System.out.println("Bitte geben Sie eine Zahl zwischen 1 und 6 ein!");
+                    default -> {
+                        System.out.println("Bitte geben Sie eine Zahl zwischen 1 und 6 ein!");
+                        Thread.sleep(2000);
+                    }
                 }
             } catch (Exception e) {
                 System.out.println("Fehler: " + e.getMessage());
+                System.exit(0);
             }
-            Thread.sleep(3000);
+
             System.out.println();
             System.out.println("------------------------------------------------");
             System.out.println();
