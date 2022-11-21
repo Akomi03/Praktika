@@ -6,7 +6,7 @@ public class Aufgabenbuch {
     private final Scanner sc = new Scanner(System.in);
 
 
-    public void addAufgabe(String titel,String beschreibung ,String faelligAm) {
+    public void addAufgabe(String titel, String beschreibung, String faelligAm) {
         sortbyiD();
         int iD = 0;
         for (int i = 0; i < aufgaben.size(); i++) {
@@ -17,7 +17,7 @@ public class Aufgabenbuch {
                 iD = aufgaben.size();
             }
         }
-        Aufgabe aufgabe = new Aufgabe(titel,beschreibung ,faelligAm, iD);
+        Aufgabe aufgabe = new Aufgabe(titel, beschreibung, faelligAm, iD);
         aufgaben.add(aufgabe);
 
     }
@@ -26,11 +26,12 @@ public class Aufgabenbuch {
         aufgaben.remove(pID);
     }
 
-    public void printAufgaben() {
+    public void kanban() {
         sortbyzustand();
         int countA = 0;
         int countB = 0;
         int countC = 0;
+
         for (Aufgabe aufgabe : aufgaben) {
 
             if (aufgabe.getZustand() == 'a') {
@@ -42,6 +43,71 @@ public class Aufgabenbuch {
             }
 
         }
+        int lengthA = " offen |".length();
+        int lengthB = " in Bearbeitung |".length();
+        int lengthC = " erledigt".length();
+
+        for (Aufgabe aufgabe : aufgaben) {
+            String s = aufgabe.getiD() + ": " + aufgabe.getTitel() + " " + aufgabe.getFaelligAm();
+            if (aufgabe.getZustand() == 'a' && s.length() > lengthA) {
+                lengthA = s.length();
+            }
+            if (aufgabe.getZustand() == 'b' && s.length() > lengthB) {
+                lengthB = s.length();
+            }
+            if (aufgabe.getZustand() == 'c' && s.length() > lengthC) {
+                lengthC = s.length();
+            }
+        }
+
+        System.out.println(" offen " + " ".repeat(lengthA - 6) + "| in Bearbeitung " + " ".repeat(lengthB - 17) + "| erledigt");
+        for (int i = 0; i < lengthA + lengthB + lengthC + 3; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
+        for (int j = 0; j < Math.max(Math.max(countA, countB), countC); j++) {
+            if (j < countA) {
+                String aufgabenstring = aufgaben.get(j).getiD() + ": " + aufgaben.get(j).getTitel() + " " + aufgaben.get(j).getFaelligAm();
+                System.out.print(aufgabenstring + " ".repeat(lengthA - aufgabenstring.length()) + "|");
+            } else {
+                System.out.print(" ".repeat(lengthA + 1) + "|");
+            }
+            if (j < countB) {
+                String aufgabenstring = aufgaben.get(j + countA).getiD() + ": " + aufgaben.get(j + countA).getTitel() + " " + aufgaben.get(j + countA).getFaelligAm();
+                System.out.print(aufgabenstring + " ".repeat(lengthB - aufgabenstring.length()) + "|");
+            } else {
+                System.out.print(" ".repeat(lengthB + 1) + "|");
+            }
+            if (j < countC) {
+                String aufgabenstring = aufgaben.get(j + countA + countB).getiD() + ": " + aufgaben.get(j + countA + countB).getTitel() + " " + aufgaben.get(j + countA + countB).getFaelligAm();
+                System.out.print(aufgabenstring + " ".repeat(lengthC - aufgabenstring.length()));
+            } else {
+                System.out.print(" ".repeat(lengthC + 1));
+            }
+            System.out.println();
+        }
+
+    }
+
+
+    public void printAufgaben() {
+        sortbyzustand();
+        int countA = 0;
+        int countB = 0;
+        int countC = 0;
+
+        for (Aufgabe aufgabe : aufgaben) {
+
+            if (aufgabe.getZustand() == 'a') {
+                countA++;
+            } else if (aufgabe.getZustand() == 'b') {
+                countB++;
+            } else if (aufgabe.getZustand() == 'c') {
+                countC++;
+            }
+
+        }
+
         System.out.println("Offene Aufgaben: " + countA);
         for (Aufgabe aufgabe : aufgaben) {
             if (aufgabe.getZustand() == 'a') {
@@ -152,7 +218,8 @@ public class Aufgabenbuch {
             }
         }
     }
-    private void sortbyDate(){
+
+    private void sortbyDate() {
         sortbyiD();
         for (int i = 0; i < aufgaben.size(); i++) {
             for (int j = 0; j < aufgaben.size(); j++) {

@@ -46,7 +46,7 @@ public class Main {
                     Thread.sleep(2000);
                 }
                 case "3" -> {
-                    aufgabenbuch.printAufgaben();
+                    aufgabenbuch.kanban();
                     Thread.sleep(2000);
                 }
                 case "4" -> {
