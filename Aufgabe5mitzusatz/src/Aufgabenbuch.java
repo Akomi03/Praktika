@@ -44,7 +44,6 @@ public class Aufgabenbuch {
             } else if (aufgabe.getZustand() == 'c') {
                 countC++;
             }
-
         }
         int lengthA = " offen |".length();
         int lengthB = " in Bearbeitung |".length();
