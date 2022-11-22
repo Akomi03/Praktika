@@ -2,8 +2,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+
+
         Aufgabenbuch aufgabenbuch = new Aufgabenbuch();
         Scanner sc = new Scanner(System.in);
+        aufgabenbuch.addAufgabe("Aufgabe1hhhhhhhh", "Beschreibung1", "2020-12-12");
+        aufgabenbuch.addAufgabe("Aufgabe2hsfgh", "Beschreibung2", "2020-12-12");
+        aufgabenbuch.addAufgabe("Aufgabe3", "Beschreibung3", "2020-12-12");
+        aufgabenbuch.init();
+
+        aufgabenbuch.kanban();
         System.out.println("Willkommen im Aufgabenbuch!");
         while (true) {
             System.out.println("Was möchten Sie tun?");

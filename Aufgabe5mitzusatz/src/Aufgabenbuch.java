@@ -5,7 +5,10 @@ public class Aufgabenbuch {
     private final ArrayList<Aufgabe> aufgaben = new ArrayList<>();
     private final Scanner sc = new Scanner(System.in);
 
-
+    public void init(){
+        aufgaben.get(1).setZustand('b');
+        aufgaben.get(2).setZustand('c');
+    }
     public void addAufgabe(String titel, String beschreibung, String faelligAm) {
         sortbyiD();
         int iD = 0;
@@ -48,7 +51,7 @@ public class Aufgabenbuch {
         int lengthC = " erledigt".length();
 
         for (Aufgabe aufgabe : aufgaben) {
-            String s = aufgabe.getiD() + ": " + aufgabe.getTitel() + " " + aufgabe.getFaelligAm();
+            String s = aufgabe.toString();
             if (aufgabe.getZustand() == 'a' && s.length() > lengthA) {
                 lengthA = s.length();
             }
@@ -60,29 +63,29 @@ public class Aufgabenbuch {
             }
         }
 
-        System.out.println(" offen " + " ".repeat(lengthA - 6) + "| in Bearbeitung " + " ".repeat(lengthB - 17) + "| erledigt");
+        System.out.println(" offen " + " ".repeat(lengthA - 6) + "| in Bearbeitung " + " ".repeat(lengthB - 16) + "| erledigt");
         for (int i = 0; i < lengthA + lengthB + lengthC + 3; i++) {
             System.out.print("-");
         }
         System.out.println();
         for (int j = 0; j < Math.max(Math.max(countA, countB), countC); j++) {
             if (j < countA) {
-                String aufgabenstring = aufgaben.get(j).getiD() + ": " + aufgaben.get(j).getTitel() + " " + aufgaben.get(j).getFaelligAm();
-                System.out.print(aufgabenstring + " ".repeat(lengthA - aufgabenstring.length()) + "|");
+                String aufgabenstring = aufgaben.get(j).toString();
+                System.out.print(aufgabenstring + " ".repeat(lengthA - aufgabenstring.length()+1) + "|");
             } else {
                 System.out.print(" ".repeat(lengthA + 1) + "|");
             }
             if (j < countB) {
-                String aufgabenstring = aufgaben.get(j + countA).getiD() + ": " + aufgaben.get(j + countA).getTitel() + " " + aufgaben.get(j + countA).getFaelligAm();
+                String aufgabenstring = aufgaben.get(j + countA).toString();
                 System.out.print(aufgabenstring + " ".repeat(lengthB - aufgabenstring.length()) + "|");
             } else {
-                System.out.print(" ".repeat(lengthB + 1) + "|");
+                System.out.print(" ".repeat(lengthB-1) + "|");
             }
             if (j < countC) {
-                String aufgabenstring = aufgaben.get(j + countA + countB).getiD() + ": " + aufgaben.get(j + countA + countB).getTitel() + " " + aufgaben.get(j + countA + countB).getFaelligAm();
+                String aufgabenstring = aufgaben.get(j + countA + countB).toString();
                 System.out.print(aufgabenstring + " ".repeat(lengthC - aufgabenstring.length()));
             } else {
-                System.out.print(" ".repeat(lengthC + 1));
+                System.out.print(" ".repeat(lengthC));
             }
             System.out.println();
         }
@@ -111,19 +114,19 @@ public class Aufgabenbuch {
         System.out.println("Offene Aufgaben: " + countA);
         for (Aufgabe aufgabe : aufgaben) {
             if (aufgabe.getZustand() == 'a') {
-                System.out.println(aufgabe.getiD() + ": " + aufgabe.getTitel() + " " + aufgabe.getFaelligAm());
+                System.out.println(aufgabe);
             }
         }
         System.out.println("In Bearbeitung: " + countB);
         for (Aufgabe aufgabe : aufgaben) {
             if (aufgabe.getZustand() == 'b') {
-                System.out.println(aufgabe.getiD() + ": " + aufgabe.getTitel() + " " + aufgabe.getFaelligAm());
+                System.out.println(aufgabe);
             }
         }
         System.out.println("Erledigte Aufgaben: " + countC);
         for (Aufgabe aufgabe : aufgaben) {
             if (aufgabe.getZustand() == 'c') {
-                System.out.println(aufgabe.getiD() + ": " + aufgabe.getTitel() + " " + aufgabe.getFaelligAm());
+                System.out.println(aufgabe);
             }
         }
     }

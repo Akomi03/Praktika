@@ -70,4 +70,9 @@ public class Aufgabe {
     public int getiD() {
         return iD;
     }
+
+    @Override
+    public String toString() {
+        return " "+iD+": "+titel+" "+faelligAm+" ";
+    }
 }
