@@ -10,7 +10,7 @@ public class Kontaktbuch {
     public void addKontakt(String vorname, String nachname, String adresse, String geburtsdatum, String telefonnummer, String email) {
         int iD =0;
         for(int i =0; i<kontakte.size(); i++){
-            if(kontakte.get(i).getID() != i){
+            if(kontakte.get(i).iD != i){
                 iD = i;
                 break;
             }else{
@@ -94,7 +94,7 @@ public class Kontaktbuch {
     private void sortID(){
         for(int i = 0; i<kontakte.size(); i++){
             for(int j = 0; j<kontakte.size(); j++){
-                if(kontakte.get(i).getID() < kontakte.get(j).getID()){
+                if(kontakte.get(i).iD < kontakte.get(j).iD){
                     Kontakt temp = kontakte.get(i);
                     kontakte.set(i, kontakte.get(j));
                     kontakte.set(j, temp);

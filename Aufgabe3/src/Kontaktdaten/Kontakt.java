@@ -19,10 +19,6 @@ public class Kontakt {
         this.email = email;
     }
 
-    public int getID() {
-        return iD;
-    }
-
     public String getVorname() {
         return vorname;
     }
