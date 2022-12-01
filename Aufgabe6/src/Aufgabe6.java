@@ -1,4 +1,3 @@
-package A6;
 
 import java.util.Scanner;
 
